@@ -1,0 +1,17 @@
+.section {
+  text-align:center;
+  font-size: 3em;
+
+}
+
+#fp-nav ul li .fp-tooltip {
+
+  color: #545454;
+
+}
+
+
+a {
+  color: unset;
+}
+

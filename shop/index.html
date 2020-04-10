@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CodePen - fullPage.js - Base example</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <link rel='stylesheet' href='https://rawgit.com/alvarotrigo/fullPage.js/dev/src/fullpage.css'>
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="fullpage">
+    <div class="section">
+      <span style="
+    position: relative;
+    top: -80px;
+">Магазин</span>
+<center>
+<div class="columns" style="position: absolute;top: 0%;width: 100%;">
+      <div class="column">
+        <a href="#page1"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </div>
+      <div class="column">
+        <a href="#page2">Наука</a>
+      </div>
+      <div class="column">
+        <a href="#page2">Дача</a>
+      </div>
+      <div class="column">
+        <a href="#page2">Grow</a>
+      </div>
+    </div>
+  
+  </div>
+
+</center>
+
+    <div class="section">
+      <span style="
+    position: relative;
+    /*top: -15px;*/
+">Наука</span>
+        <div class="slide" data-anchor="slide1">Товары 2.1</div>
+        <div class="slide" data-anchor="slide2">Товары 2.2</div>
+    </div>
+    <div class="section">
+      <span style="
+    position: relative;
+   /* top: -170px;*/
+">Дача</span>
+      
+<div class="slide" data-anchor="slide1">Товары 3.1</div>
+<div class="slide" data-anchor="slide2">Товары 3.2</div>
+
+</div>
+    <div class="section">
+      <span style="
+    position: relative;
+   /* top: -170px; */
+">Grow</span>
+
+<div class="slide" data-anchor="slide1">Товары 4.1</div>
+<div class="slide" data-anchor="slide2">Товары 4.2</div>
+
+</div>
+</div>
+<!-- partial -->
+  <script src='https://rawgit.com/alvarotrigo/fullPage.js/dev/src/fullpage.js'></script>
+  <script  src="./script.js"></script>
+
+  <script type="text/javascript">
+    new fullpage('#fullpage', {
+        anchors: ['page1', 'page2', 'page3', 'page4'],
+        navigationTooltips: ['fullPage', 'Open', 'Easy', 'Touch'],
+        css3: true,
+        scrollingSpeed: 1000,
+        navigation: true,
+        slidesNavigation: true,
+        responsiveHeight: 330,
+        dragAndMove: true,
+        dragAndMoveKey: 'YWx2YXJvdHJpZ28uY29tX0EyMlpISmhaMEZ1WkUxdmRtVT0wWUc=',
+        controlArrows: false
+    });
+</script>
+
+</body>
+</html>
