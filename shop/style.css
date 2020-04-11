@@ -8,7 +8,8 @@
   color: #545454;
 }
 .column {
-    border-bottom: 8px solid #ff0;
+    /*border-bottom: 8px solid #ff0;*/
+  8px solid #efefef;
 }
 a {
   color: unset;
