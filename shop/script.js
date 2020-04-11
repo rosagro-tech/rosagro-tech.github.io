@@ -1,5 +1,5 @@
 new fullpage('#fullpage', {
-  sectionsColor: ['yellow', 'orange', '#C0C0C0', '#ADD8E6'],
+  sectionsColor: ['#efefef', 'orange', '#C0C0C0', '#ADD8E6'],
   anchors: ['page1', 'page2', 'page3', 'page4'],
   navigationTooltips: ['Магазин', 'Наука', 'Дача', 'Grow'],
   css3: true,
