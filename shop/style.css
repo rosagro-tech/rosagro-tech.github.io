@@ -9,7 +9,8 @@
 }
 .column {
     /*border-bottom: 8px solid #ff0;*/
-  8px solid #efefef;
+      border-bottom: 8px solid #efefef;
+ /* 8px solid #efefef;*/
 }
 a {
   color: unset;
