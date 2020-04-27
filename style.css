@@ -1,7 +1,13 @@
 body {
-			margin:0;
-			overflow: hidden;
-		  cursor: none;
+  margin: 0;
+  overflow: hidden;
+  cursor: none;
+  background-color: #ffffff;
+  BACKGROUND-REPEAT: NO-REPEAT;
+  background-image: url(https://thumb.tildacdn.com/tild6237-6362-4166-b938-343964626662/-/resize/1000x/-/format/webp/noroot.png);
+  height: 100vh;
+  z-index: -1;
+  background-position: bottom;
 }
 
 canvas {
