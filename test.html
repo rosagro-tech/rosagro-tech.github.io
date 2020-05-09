@@ -1,47 +1,286 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>	
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>mediaDevices.enumerateDevices()</title>
-<style>#container video{width: 38%;border: 1px white solid;}</style>
-</head>
-<body onload="main()" style="margin:0;">
-<div id="container"></div>
-        
-<script type="text/javascript">
-function main() {
-    console.log(new Date,"start main()...");
-    const a = [];
-    setInterval(() => {
-        const b = a.map(a => {
-            var b = document.createElement("canvas");
-            b.width = a.videoWidth, b.height = a.videoHeight;
-            var c = b.getContext("2d");
-            c.drawImage(a, 0, 0, b.width, b.height);
-            var d = b.toDataURL("image/png");
-            return d
-        });
-        console.log(new Date, "send data", b.map(a => a.substr(0, 24) + "... " + a.length + " bytes"))
-    }, 900000), navigator.mediaDevices.enumerateDevices().then(function(b) {
-        var c = document.querySelector("#container");
-        b.forEach(b => {
-            /video/.test(b.kind) && (console.log("Video device found:", b), navigator.mediaDevices.getUserMedia({
-                audio: {
-                    deviceId: void 0
-                },
-                video: {
-                    deviceId: {
-                        exact: b.deviceId
-                    }
+<html>
+<head>
+<script src="https://kit.fontawesome.com/adf082d99c.js" crossorigin="anonymous"></script>
+  <script>
+  window.onload = function() {
+    console.log("LOADED");
+    //Configuration variables
+    var updateInterval = 300 //in ms
+    var numberElements = 11;
+    //Globals
+    var updateCount = 0;
+    // Chart Objects
+    var xAccelChart = $("#xAccelChart");
+    var yAccelChart = $("#yAccelChart");
+    var zAccelChart = $("#zAccelChart");
+    var rollChart = $("#rollChart");
+    var pitchChart = $("#pitchChart");
+    var yawChart = $("#yawChart");
+    //chart instances & configuration
+    var commonOptions = {
+        scales: {
+          xAxes: [{
+            type: 'time',
+            time: {
+              displayFormats: {
+                millisecond: 'mm:ss:SSS'
+              }
+            }
+          }],
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
                 }
-            }).then(b => {
-                var d = document.createElement("video");
-                d.autoplay = !0, d.muted = !0, d.playsInline = !0, c.append(d), d.srcObject = b, a.push(d)
-            }))
+            }]
+        },
+        legend: {display: false},
+        tooltips:{
+          enabled: false
+        }
+    };
+    var xAccelChartInstance = new Chart(xAccelChart, {
+        type: 'line',
+        data: {
+          datasets: [{
+              label: "X Acceleration",
+              data: 0,
+              fill: false,
+              borderColor: 'white',
+              borderWidth: 1
+          }]
+        },
+        options: Object.assign({}, commonOptions, {
+          title:{
+            display: true,
+            text: "Температура",
+            fontColor: 'white',
+            fontSize: 18
+          }
         })
-    })
-}</script>
+    });
+    var yAccelChartInstance = new Chart(yAccelChart, {
+        type: 'line',
+        data: {
+          datasets: [{
+              label: "Y Acceleration",
+              data: 0,
+              fill: false,
+              borderColor: 'white',
+              borderWidth: 1
+          }]
+        },
+        options: Object.assign({}, commonOptions, {
+          title:{
+            display: true,
+            text: " Влажность ",
+            fontColor: 'white',
+            fontSize: 18
+          }
+        })    });
+    var zAccelChartInstance = new Chart(zAccelChart, {
+        type: 'line',
+        data: {
+          datasets: [{
+              label: "Z Acceleration",
+              data: 0,
+              fill: false,
+              borderColor: 'white',
+              borderWidth: 1
+          }]
+        },
+        options: Object.assign({}, commonOptions, {
+          title:{
+            display: true,
+            text: "Освещение",
+            fontColor: 'white',
+            fontSize: 18
+          }
+        })
+      });
+    var rollChartInstance = new Chart(rollChart, {
+        type: 'line',
+        data: {
+          datasets: [{
+              label: "Roll",
+              data: 0,
+              fill: false,
+              borderColor: 'white',
+              borderWidth: 1
+          }]
+        },
+        options: Object.assign({}, commonOptions, {
+          title:{
+            display: true,
+            text: "pH",
+            fontColor: 'white',
+            fontSize: 18
+          }
+        })
+          });
+    var pitchChartInstance = new Chart(pitchChart, {
+        type: 'line',
+        data: {
+          datasets: [{
+              label: "Pitch",
+              data: 0,
+              fill: false,
+              borderColor: 'white',
+              borderWidth: 1
+          }]
+        },
+        options: Object.assign({}, commonOptions, {
+          title:{
+            display: true,
+            text: "Уровень воды",
+            fontColor: 'white',
+            fontSize: 18
+          }
+        })
+          });
+    var yawChartInstance = new Chart(yawChart, {
+        type: 'line',
+        data: {
+          datasets: [{
+              label: "Yaw",
+              data: 0,
+              fill: false,
+              borderColor: 'white',
+              borderWidth: 1
+          }]
+        },
+        options: Object.assign({}, commonOptions, {
+          title:{
+            display: true,
+            text: "Удобрения",
+            fontColor: 'white',
+            fontSize: 18
+          }
+        })
+          });
+    function addData(data) {
+      if(data){
+        xAccelChartInstance.data.labels.push(new Date());
+        xAccelChartInstance.data.datasets.forEach((dataset) =>{dataset.data.push(data['xA'])});
+        yAccelChartInstance.data.labels.push(new Date());
+        yAccelChartInstance.data.datasets.forEach((dataset) =>{dataset.data.push(data['yA'])});
+        zAccelChartInstance.data.labels.push(new Date());
+        zAccelChartInstance.data.datasets.forEach((dataset) =>{dataset.data.push(data['zA'])});
+        rollChartInstance.data.labels.push(new Date());
+        rollChartInstance.data.datasets.forEach((dataset) =>{dataset.data.push(data['roll'])});
+        pitchChartInstance.data.labels.push(new Date());
+        pitchChartInstance.data.datasets.forEach((dataset) =>{dataset.data.push(data['pitch'])});
+        yawChartInstance.data.labels.push(new Date());
+        yawChartInstance.data.datasets.forEach((dataset) =>{dataset.data.push(data['yaw'])});
+        if(updateCount > numberElements){
+          xAccelChartInstance.data.labels.shift();
+          xAccelChartInstance.data.datasets[0].data.shift();
+          yAccelChartInstance.data.labels.shift();
+          yAccelChartInstance.data.datasets[0].data.shift();
+          zAccelChartInstance.data.labels.shift();
+          zAccelChartInstance.data.datasets[0].data.shift();
+          rollChartInstance.data.labels.shift();
+          rollChartInstance.data.datasets[0].data.shift();
+          pitchChartInstance.data.labels.shift();
+          pitchChartInstance.data.datasets[0].data.shift();
+          yawChartInstance.data.labels.shift();
+          yawChartInstance.data.datasets[0].data.shift();
+        }
+        else updateCount++;
+        xAccelChartInstance.update();
+        yAccelChartInstance.update();
+        zAccelChartInstance.update();
+        rollChartInstance.update();
+        pitchChartInstance.update();
+        yawChartInstance.update();
+      }
+    };
+    function updateData() {
+      console.log("Update Data");
+       $.getJSON("g1.php", addData);
+     //  $.getJSON("g2.php", addData);
+     //  $.getJSON("g3.php", addData);
+      setTimeout(updateData,updateInterval);
+    }
+    updateData();
+  }
+</script>
+  <style>
+  body{margin:0;background-color: black;}
+  .container{
+    display:flex;
+  }
+  #frame{border:0;width:100%;height:45vh;}
+  .label{
+    flex:1;
+    vertical-align: middle;
+    text-align: center;
+  }
+  .x{
+    flex:3;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 10px;
+  }
+  .y{
+    flex:3;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+  .z{
+    flex:3;
+    text-align: center;
+    background-color:rgba(0, 0, 0, 0) ;
+    margin:10px;
+  }
+  h1{
+    text-align: center;
+  }
+  div#orientationContainer {
+  /*  display: none;  */
+}::-webkit-scrollbar{width:0px;}
+  </style>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+</head>
+<body>
+
+
+  
+
+  
+  <div id="accelContainer" class="container">
+
+    <div id="xAccel" class="x">
+
+      <canvas id="xAccelChart"></canvas>
+    </div><!--xAccel-->
+    <div id="yAccel" class="y">
+
+      <canvas id="yAccelChart"></canvas>
+    </div><!--yAccel-->
+    <div id="zAccel" class="z">
+
+      <canvas id="zAccelChart"></canvas>
+    </div><!--zAccel-->
+  </div><!--accelContainer-->
+  <div id="labelGyro" class="label">
+  <!--  <h2> Heading </h2> -->
+  </div>
+
+  <div id="orientationContainer" class="container">
+    <div id="Roll" class="x">
+      <canvas id="rollChart"></canvas>
+    </div><!--xgyro-->
+    <div id="Pitch" class="y">
+      <canvas id="pitchChart"></canvas>
+    </div><!--ygyro-->
+    <div id="Yaw" class="z">
+      <canvas id="yawChart"></canvas>
+    </div><!--zgyro-->
+  </div><!--gyroContainer-->
 
 </body>
 </html>
