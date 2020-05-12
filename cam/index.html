@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    
+<head>
+    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mediaDevices.enumerateDevices()</title>
+<style>#container video{width: 24%;border:2px black solid;border-radius: 6px;}</style>
+</head>
+<body onload="main()" style="margin:0;background-color:black;">   
+<div id="container"></div> 
+<script type="text/javascript">
+/*function main() {
+    console.log(new Date,"main()..."), navigator.mediaDevices.enumerateDevices().then(function(a) {
+        var b = document.querySelector("#container");
+        a.forEach(a => {
+            /video/.test(a.kind) && (console.log("Video device found:", a), navigator.mediaDevices.getUserMedia({
+                audio: {
+                    deviceId: void 0
+                },
+                video: {
+                    deviceId: {
+                        exact: a.deviceId
+                    }
+                }
+            }).then(a => {
+                var c = document.createElement("video");
+                c.autoplay = !0, c.muted = !0, c.playsInline = !0, b.append(c), c.srcObject = a
+            }))
+        })
+    })
+}*/ function main() {
+    console.log(new Date,"start main()...");
+    const a = [];
+    setInterval(() => {
+        const b = a.map(a => {
+            var b = document.createElement("canvas");
+            b.width = a.videoWidth, b.height = a.videoHeight;
+            var c = b.getContext("2d");
+            c.drawImage(a, 0, 0, b.width, b.height);
+            var d = b.toDataURL("image/png");
+            return d
+        });
+        console.log(new Date, "send data", b.map(a => a.substr(0, 24) + "... " + a.length + " bytes"))
+    }, 900000), navigator.mediaDevices.enumerateDevices().then(function(b) {
+        var c = document.querySelector("#container");
+        b.forEach(b => {
+            /video/.test(b.kind) && (console.log("Video device found:", b), navigator.mediaDevices.getUserMedia({
+                audio: {
+                    deviceId: void 0
+                },
+                video: {
+                    deviceId: {
+                        exact: b.deviceId
+                    }
+                }
+            }).then(b => {
+                var d = document.createElement("video");
+                d.autoplay = !0, d.muted = !0, d.playsInline = !0, c.append(d), d.srcObject = b, a.push(d)
+            }))
+        })
+    })
+}</script>
+    
+    <style>#frame{border:0;width:100%;height:70vh;}::-webkit-scrollbar{width:0px;}</style>
+</body>
+</html>
