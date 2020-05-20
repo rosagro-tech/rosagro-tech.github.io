@@ -19,10 +19,12 @@
     var yawChart = $("#yawChart");
     
     var xChart = document.getElementById('xAccelChart').getContext('2d'),
-    xGradient  = xChart.createLinearGradient(0, 0, 0, 125);
+    xGradient  = xChart.createLinearGradient(0, 0, 0, 145);
     xGradient.addColorStop(0, 'white');
-    xGradient.addColorStop(0.5, 'gray');
+    xGradient.addColorStop(.15, 'white');
+    xGradient.addColorStop(.45, 'grey');
     xGradient.addColorStop(1, 'black');
+
 
 
 
@@ -73,16 +75,19 @@
           datasets: [{
               label: "X Acceleration",
               backgroundColor: xGradient,
-              pointBackgroundColor: '#7b7b7b96',
-              fillColor : "rgba(220,220,220,0.5)",
-				strokeColor : "rgba(220,220,220,1)",
-				pointColor : "rgba(220,220,220,1)",
-        pointStrokeColor : "#fff",
-        fillColor: gradient,
+              pointBackgroundColor: 'black',
+              fillColor : "rgb(0, 20, 255)",
+				      strokeColor : "rgb(0, 20, 255)",
+				      pointColor : "rgb(0, 20, 255)",
+              pointStrokeColor : "rgb(0, 20, 255)",
+              fillColor: xGradient,
               data: 0,
               fill: true,
+             // borderColor: '#949494',
               borderColor: 'white',
-              borderWidth: 1
+              pointBorderColor: 'white',
+              borderWidth: 3,
+              pointBorderWidth: 1.5
           }]
         },
         options: Object.assign({}, commonOptions, {
@@ -100,16 +105,19 @@
           datasets: [{
               label: "Y Acceleration",
               backgroundColor: xGradient,
-              pointBackgroundColor: '#7b7b7b96',
-              fillColor : "rgba(220,220,220,0.5)",
-				      strokeColor : "rgba(220,220,220,1)",
-				      pointColor : "rgba(220,220,220,1)",
-              pointStrokeColor : "#fff",
-              fillColor: gradient,
+              pointBackgroundColor: 'black',
+              fillColor : "rgb(0, 20, 255)",
+				      strokeColor : "rgb(0, 20, 255)",
+				      pointColor : "rgb(0, 20, 255)",
+              pointStrokeColor : "rgb(0, 20, 255)",
+              fillColor: xGradient,
               data: 0,
               fill: true,
+             // borderColor: '#949494',
               borderColor: 'white',
-              borderWidth: 1
+              pointBorderColor: 'white',
+              borderWidth: 3,
+              pointBorderWidth: 1.5
           }]
         },
         options: Object.assign({}, commonOptions, {
@@ -126,16 +134,19 @@
           datasets: [{
               label: "Z Acceleration",
               backgroundColor: xGradient,
-              pointBackgroundColor: '#7b7b7b96',
-              fillColor : "rgba(220,220,220,0.5)",
-				      strokeColor : "rgba(220,220,220,1)",
-				      pointColor : "rgba(220,220,220,1)",
-              pointStrokeColor : "#fff",
-              fillColor: gradient,
+              pointBackgroundColor: 'black',
+              fillColor : "rgb(0, 20, 255)",
+				      strokeColor : "rgb(0, 20, 255)",
+				      pointColor : "rgb(0, 20, 255)",
+              pointStrokeColor : "rgb(0, 20, 255)",
+              fillColor: xGradient,
               data: 0,
               fill: true,
+             // borderColor: '#949494',
               borderColor: 'white',
-              borderWidth: 1
+              pointBorderColor: 'white',
+              borderWidth: 3,
+              pointBorderWidth: 1.5
           }]
         },
         options: Object.assign({}, commonOptions, {
@@ -153,16 +164,19 @@
           datasets: [{
               label: "Roll",
               backgroundColor: xGradient,
-              pointBackgroundColor: '#7b7b7b96',
-              fillColor : "rgba(220,220,220,0.5)",
-				      strokeColor : "rgba(220,220,220,1)",
-				      pointColor : "rgba(220,220,220,1)",
-              pointStrokeColor : "#fff",
-              fillColor: gradient,
+              pointBackgroundColor: 'black',
+              fillColor : "rgb(0, 20, 255)",
+				      strokeColor : "rgb(0, 20, 255)",
+				      pointColor : "rgb(0, 20, 255)",
+              pointStrokeColor : "rgb(0, 20, 255)",
+              fillColor: xGradient,
               data: 0,
               fill: true,
+             // borderColor: '#949494',
               borderColor: 'white',
-              borderWidth: 1
+              pointBorderColor: 'white',
+              borderWidth: 3,
+              pointBorderWidth: 1.5
           }]
         },
         options: Object.assign({}, commonOptions, {
@@ -180,16 +194,19 @@
           datasets: [{
               label: "Pitch",
               backgroundColor: xGradient,
-              pointBackgroundColor: '#7b7b7b96',
-              fillColor : "rgba(220,220,220,0.5)",
-				      strokeColor : "rgba(220,220,220,1)",
-				      pointColor : "rgba(220,220,220,1)",
-              pointStrokeColor : "#fff",
-              fillColor: gradient,
+              pointBackgroundColor: 'black',
+              fillColor : "rgb(0, 20, 255)",
+				      strokeColor : "rgb(0, 20, 255)",
+				      pointColor : "rgb(0, 20, 255)",
+              pointStrokeColor : "rgb(0, 20, 255)",
+              fillColor: xGradient,
               data: 0,
               fill: true,
+             // borderColor: '#949494',
               borderColor: 'white',
-              borderWidth: 1
+              pointBorderColor: 'white',
+              borderWidth: 3,
+              pointBorderWidth: 1.5
           }]
         },
         options: Object.assign({}, commonOptions, {
@@ -207,16 +224,19 @@
           datasets: [{
               label: "Yaw",
               backgroundColor: xGradient,
-              pointBackgroundColor: '#7b7b7b96',
-              fillColor : "rgba(220,220,220,0.5)",
-				      strokeColor : "rgba(220,220,220,1)",
-				      pointColor : "rgba(220,220,220,1)",
-              pointStrokeColor : "#fff",
-              fillColor: gradient,
+              pointBackgroundColor: 'black',
+              fillColor : "rgb(0, 20, 255)",
+				      strokeColor : "rgb(0, 20, 255)",
+				      pointColor : "rgb(0, 20, 255)",
+              pointStrokeColor : "rgb(0, 20, 255)",
+              fillColor: xGradient,
               data: 0,
               fill: true,
+             // borderColor: '#949494',
               borderColor: 'white',
-              borderWidth: 1
+              pointBorderColor: 'white',
+              borderWidth: 3,
+              pointBorderWidth: 1.5
           }]
         },
         options: Object.assign({}, commonOptions, {
@@ -229,9 +249,12 @@
         })
           });
     function addData(data) {
-      if(data){
+      if(data) {
         xAccelChartInstance.data.labels.push(new Date());
         xAccelChartInstance.data.datasets.forEach((dataset) =>{dataset.data.push(data['xA'])});
+
+       // xAccelChartInstance.options.forEach((option) =>{option.title.push(text['xA'])});
+
         yAccelChartInstance.data.labels.push(new Date());
         yAccelChartInstance.data.datasets.forEach((dataset) =>{dataset.data.push(data['yA'])});
         zAccelChartInstance.data.labels.push(new Date());
