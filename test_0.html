@@ -1,15 +1,11 @@
-<html> 
+<html>
 <head>
-<script src="https://kit.fontawesome.com/adf082d99c.js" crossorigin="anonymous"></script> 
-  <script>
-  window.onload = function() {
+<script>
+    window.onload = function() {
     console.log("LOADED");
-    //Configuration variables
-    var updateInterval = 300 //in ms
-    var numberElements = 11;
-    //Globals
+    var updateInterval = 600 // миллисекунды
+    var numberElements = 22;
     var updateCount = 0;
-    // Chart Objects
     var xAccelChart = $("#xAccelChart");
     var yAccelChart = $("#yAccelChart");
     var zAccelChart = $("#zAccelChart");
@@ -22,26 +18,16 @@
     xGradient.addColorStop(.15, 'white');
     xGradient.addColorStop(.45, 'grey');
     xGradient.addColorStop(1, 'black');
-
     var yChart = document.getElementById('yAccelChart').getContext('2d'),
     gradient  = yChart.createLinearGradient(0, 0, 0, 125);
-
     var zChart = document.getElementById('zAccelChart').getContext('2d'),
     gradient  = zChart.createLinearGradient(0, 0, 0, 125);
-
     var rollChart = document.getElementById('rollChart').getContext('2d'),
     gradient  = rollChart.createLinearGradient(0, 0, 0, 125);
-
     var pitchChart = document.getElementById('pitchChart').getContext('2d'),
     gradient  = pitchChart.createLinearGradient(0, 0, 0, 125);
-
     var yawChart = document.getElementById('yawChart').getContext('2d'),
-    gradient  = yawChart.createLinearGradient(0, 0, 0, 125);
-
-    //chart instances & configuration
-
-
-
+    gradient  = yawChart.createLinearGradient(0, 0, 0, 125); 
     var commonOptions = {
         scales: {
           xAxes: [{
@@ -69,24 +55,19 @@
           datasets: [{
               label: "X Acceleration",
               backgroundColor: xGradient,
-              pointBackgroundColor: 'black',
-              fillColor : "rgb(0, 20, 255)",
-				      strokeColor : "rgb(0, 20, 255)",
-				      pointColor : "rgb(0, 20, 255)",
               pointStrokeColor : "rgb(0, 20, 255)",
               fillColor: xGradient,
               data: 0,
               fill: true,
-             // borderColor: '#949494',
               borderColor: 'white',
               pointBorderColor: 'white',
               borderWidth: 3,
-              pointBorderWidth: 1.5
+              pointBorderWidth: 2
           }]
         },
         options: Object.assign({}, commonOptions, {
           title:{
-             display:false,
+           display: false,
             text: "Температура",
             fontColor: 'white',
             fontSize: 18
@@ -99,24 +80,19 @@
           datasets: [{
               label: "Y Acceleration",
               backgroundColor: xGradient,
-              pointBackgroundColor: 'black',
-              fillColor : "rgb(0, 20, 255)",
-				      strokeColor : "rgb(0, 20, 255)",
-				      pointColor : "rgb(0, 20, 255)",
               pointStrokeColor : "rgb(0, 20, 255)",
               fillColor: xGradient,
               data: 0,
               fill: true,
-             // borderColor: '#949494',
               borderColor: 'white',
               pointBorderColor: 'white',
               borderWidth: 3,
-              pointBorderWidth: 1.5
+              pointBorderWidth: 2
           }]
         },
         options: Object.assign({}, commonOptions, {
           title:{
-   display:false,
+     display: false,
             text: " Влажность ",
             fontColor: 'white',
             fontSize: 18
@@ -128,24 +104,19 @@
           datasets: [{
               label: "Z Acceleration",
               backgroundColor: xGradient,
-              pointBackgroundColor: 'black',
-              fillColor : "rgb(0, 20, 255)",
-				      strokeColor : "rgb(0, 20, 255)",
-				      pointColor : "rgb(0, 20, 255)",
               pointStrokeColor : "rgb(0, 20, 255)",
               fillColor: xGradient,
               data: 0,
               fill: true,
-             // borderColor: '#949494',
               borderColor: 'white',
               pointBorderColor: 'white',
               borderWidth: 3,
-              pointBorderWidth: 1.5
+              pointBorderWidth: 2
           }]
         },
         options: Object.assign({}, commonOptions, {
           title:{
-           display:false,
+           display: false,
             text: "Освещение",
             fontColor: 'white',
             fontSize: 18
@@ -158,24 +129,19 @@
           datasets: [{
               label: "Roll",
               backgroundColor: xGradient,
-              pointBackgroundColor: 'black',
-              fillColor : "rgb(0, 20, 255)",
-				      strokeColor : "rgb(0, 20, 255)",
-				      pointColor : "rgb(0, 20, 255)",
               pointStrokeColor : "rgb(0, 20, 255)",
               fillColor: xGradient,
               data: 0,
               fill: true,
-             // borderColor: '#949494',
               borderColor: 'white',
               pointBorderColor: 'white',
               borderWidth: 3,
-              pointBorderWidth: 1.5
+              pointBorderWidth: 2
           }]
         },
         options: Object.assign({}, commonOptions, {
           title:{
-           display:false,
+           display: false,
             text: "pH",
             fontColor: 'white',
             fontSize: 18
@@ -188,24 +154,19 @@
           datasets: [{
               label: "Pitch",
               backgroundColor: xGradient,
-              pointBackgroundColor: 'black',
-              fillColor : "rgb(0, 20, 255)",
-				      strokeColor : "rgb(0, 20, 255)",
-				      pointColor : "rgb(0, 20, 255)",
               pointStrokeColor : "rgb(0, 20, 255)",
               fillColor: xGradient,
               data: 0,
               fill: true,
-             // borderColor: '#949494',
               borderColor: 'white',
               pointBorderColor: 'white',
               borderWidth: 3,
-              pointBorderWidth: 1.5
+              pointBorderWidth: 2
           }]
         },
         options: Object.assign({}, commonOptions, {
           title:{
-            display:false,
+            display: false,
             text: "Уровень воды",
             fontColor: 'white',
             fontSize: 18
@@ -218,24 +179,19 @@
           datasets: [{
               label: "Yaw",
               backgroundColor: xGradient,
-              pointBackgroundColor: 'black',
-              fillColor : "rgb(0, 20, 255)",
-				      strokeColor : "rgb(0, 20, 255)",
-				      pointColor : "rgb(0, 20, 255)",
               pointStrokeColor : "rgb(0, 20, 255)",
               fillColor: xGradient,
               data: 0,
               fill: true,
-             // borderColor: '#949494',
               borderColor: 'white',
               pointBorderColor: 'white',
               borderWidth: 3,
-              pointBorderWidth: 1.5
+              pointBorderWidth: 2
           }]
         },
         options: Object.assign({}, commonOptions, {
           title:{
-            display:false,
+            display: false,
             text: "Удобрения",
             fontColor: 'white',
             fontSize: 18
@@ -246,9 +202,6 @@
       if(data) {
         xAccelChartInstance.data.labels.push(new Date());
         xAccelChartInstance.data.datasets.forEach((dataset) =>{dataset.data.push(data['xA'])});
-
-       // xAccelChartInstance.options.forEach((option) =>{option.title.push(text['xA'])});
-
         yAccelChartInstance.data.labels.push(new Date());
         yAccelChartInstance.data.datasets.forEach((dataset) =>{dataset.data.push(data['yA'])});
         zAccelChartInstance.data.labels.push(new Date());
@@ -285,15 +238,12 @@
     function updateData() {
       console.log("Update Data");
          $.getJSON("https://онлайнмастерская.рф/gen.php", addData);
-     //  $.getJSON("g1.php", addData); 
-     //  $.getJSON("g2.php", addData);
-     //  $.getJSON("g3.php", addData);
-      setTimeout(updateData,updateInterval);
+         setTimeout(updateData,updateInterval);
     }
     updateData();
   }
 </script>
-  <style>
+<style>
   body{margin:0;background-color: black;}
   .container{
     display:flex;
@@ -327,46 +277,36 @@
     text-align: center;
   }
   div#orientationContainer {
-  /*  display: none;  */
 }::-webkit-scrollbar{width:0px;}
     #frame{}
   </style>
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 </head>
 <body>
-  
-  <div id="accelContainer" class="container">
-
-    <div id="xAccel" class="x">
-
-      <canvas id="xAccelChart"></canvas>
-    </div><!--xAccel-->
-    <div id="yAccel" class="y">
-
-      <canvas id="yAccelChart"></canvas>
-    </div><!--yAccel-->
-    <div id="zAccel" class="z">
-
-      <canvas id="zAccelChart"></canvas>
-    </div><!--zAccel-->
-  </div><!--accelContainer-->
-  <div id="labelGyro" class="label">
-  <!--  <h2> Heading </h2> -->
-  </div>
-
-  <div id="orientationContainer" class="container">
-    <div id="Roll" class="x">
-      <canvas id="rollChart"></canvas>
-    </div><!--xgyro-->
-    <div id="Pitch" class="y">
-      <canvas id="pitchChart"></canvas>
-    </div><!--ygyro-->
-    <div id="Yaw" class="z">
-      <canvas id="yawChart"></canvas>
-    </div><!--zgyro-->
-  </div><!--gyroContainer-->
-
+<div id="accelContainer" class="container">
+<div id="xAccel" class="x">
+<canvas id="xAccelChart"></canvas>
+</div>
+<div id="yAccel" class="y">
+<canvas id="yAccelChart"></canvas>
+</div>
+<div id="zAccel" class="z">
+<canvas id="zAccelChart"></canvas>
+</div>
+</div>
+<div id="labelGyro" class="label">
+</div>
+<div id="orientationContainer" class="container">
+<div id="Roll" class="x">
+<canvas id="rollChart"></canvas>
+</div>
+<div id="Pitch" class="y">
+<canvas id="pitchChart"></canvas>
+</div>
+<div id="Yaw" class="z">
+<canvas id="yawChart"></canvas>
+</div>
+</div>
 </body>
 </html>
