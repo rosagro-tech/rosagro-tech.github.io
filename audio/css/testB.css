@@ -44,6 +44,7 @@ display: none;
     justify-content: center;
     align-items: center;
     display: block;
+    color: #00ffff66;
           } 
     span#lbl, span#cnf {
     padding-bottom: 20px;
