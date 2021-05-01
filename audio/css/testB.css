@@ -17,23 +17,26 @@
     font-size: 4em;
     font-family: 'Press Start 2P', cursive;
     font-family: 'Jura', sans-serif;
-    }
+        }
     div { 
     padding-top: 15px;padding-bottom: 15px;}
     canvas{background-color: bisque;display: none;
         }
       .otpu {
-        text-align: center;
+    text-align: center;
     height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
-          } .outp {
-            text-align: center;
+            }
+      .outp {
+    font-size: 3em;
+    text-align: center;
     justify-content: center;
     align-items: center;
     display: block;
-          }span#lbl, span#cnf {
+          } 
+    span#lbl, span#cnf {
     padding-bottom: 20px;
     padding-top: 20px;
     display: block;
