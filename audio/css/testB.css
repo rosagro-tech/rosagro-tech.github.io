@@ -22,13 +22,6 @@
     padding-top: 15px;padding-bottom: 15px;}
     canvas{background-color: bisque;display: none;
         }
-    .outp {
-    text-align: center;
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-          }
       .otpu {
         text-align: center;
     height: 80vh;
