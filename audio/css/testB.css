@@ -57,3 +57,8 @@ body {
     bottom: 0;
     right: 35px;
            }
+       #cnf {
+     position: fixed;
+     top: 0;
+     left: 20px;
+ }
