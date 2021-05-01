@@ -28,7 +28,8 @@ body {
         }
     div { 
     padding-top: 15px;padding-bottom: 15px;}
-    canvas{background-color: bisque;display: none;
+    canvas{
+display: none;
         }
       .otpu {
     text-align: center;
