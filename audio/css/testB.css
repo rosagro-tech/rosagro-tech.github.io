@@ -40,4 +40,9 @@
     padding-bottom: 20px;
     padding-top: 20px;
     display: block;
-          } 
+          }
+      #cnf {
+    position: fixed;
+    bottom: 0;
+    right: 35px;
+           }
