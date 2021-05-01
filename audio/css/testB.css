@@ -1,1 +1,46 @@
 
+/**************************************************************************************************************************************************************************************************/
+/*******************************************************/@import url('https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap');/******************************************************/
+/**************************************************************************************************************************************************************************************************/
+    body {
+    font-family: 'Jura', sans-serif;
+    }
+    .initAnalyze {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: lightsteelblue;
+    color: white;
+    font-size: 4em;
+    font-family: 'Press Start 2P', cursive;
+    font-family: 'Jura', sans-serif;
+    }
+    div { 
+    padding-top: 15px;padding-bottom: 15px;}
+    canvas{background-color: bisque;display: none;
+        }
+    .outp {
+    text-align: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+          }
+      .otpu {
+        text-align: center;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+          } .outp {
+            text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: block;
+          }span#lbl, span#cnf {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    display: block;
+          } 
