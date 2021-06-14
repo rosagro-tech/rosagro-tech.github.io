@@ -31,15 +31,15 @@
         <input type="button" id="btnMute" value="<X" onclick="MuteNow()" /> -->
         <br />
 
-        Volume :
+        <i class="fa fa-volume-up" aria-hidden="true"></i>
         <input type="range" min="0" max="1" step="0.1" id="volume"
             onchange="ChangeVolume()">
         <br />
 
-        Time lapsed:
+        <!-- время: -->
         <input type="range" step="any" id="seekbar"
             onchange="ChangeTheTime()">
-        <label id="lblTime">-:--:--</label>
+        <label id="lblTime"></label>
     </div>
 
     <script src="modernizr-custom.js" type="text/javascript"></script>
