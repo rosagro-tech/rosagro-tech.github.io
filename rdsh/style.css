@@ -1,3 +1,14 @@
+@font-face {
+	font-family: 'NfS MW';
+	src: url('fonts/nfs_mw.eot'); /* IE 9 Compatibility Mode */
+	src: url('fonts/nfs_mw.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('fonts/nfs_mw.woff2') format('woff2'), /* Super Modern Browsers */
+		url('fonts/nfs_mw.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('fonts/nfs_mw.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('fonts/nfs_mw.svg#nfs_mw') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+
+body{}
 :root {
     --atom-size: 80px;
     --atom-color-hex: white;
@@ -23,7 +34,9 @@ body {
     display: grid;
     place-items: center;
     box-sizing: border-box;
+    font-family: 'NfS MW';
 }
+h1{font-family: 'NfS MW';}
 *, *:before, *::after { box-sizing: border-box; }
 
 
