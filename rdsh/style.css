@@ -37,13 +37,14 @@ body {
     font-family: 'NfS MW';
 }
 .scns {
-font-family: 'NfS MW';font-size: 6em;
-color: white;
-position: absolute;
-top: 423px;
-width: 100%;
-left: 0;
-text-align: center;
+    font-family: 'NfS MW';
+    font-size: 6em;
+    color: white;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    left: 0;
+    text-align: center;
 }
 *, *:before, *::after { box-sizing: border-box; }
 
