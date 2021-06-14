@@ -213,7 +213,7 @@ main::after {
     left: 0;
     width: var(--atom-size);
     height: var(--nucleus-size);
-    background-image: radial-gradient(closest-side, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
+    background-image: radial-gradient(closest-side, rgb(255 255 255 / 50%), rgb(255 255 255 / 9%));
     border-radius: 100%;
     transform: scale(1, .8);
     animation: 8s shadow infinite cubic-bezier(1, .25, 0, .75);
