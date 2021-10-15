@@ -15,10 +15,11 @@
        return promiseResult.text()
       })
        .then(responseResult => {
-        alert(responseResult + ' респонс');
-        alert(promiseResult + ' промис');
+        const show = document.getElementById('data');
+        alert(responseResult);
+        //alert(promiseResult + ' промис');
         //document.write(responseResult)
-document.getElementByClassName('data').innerHTML = responseResult ;
+        document.getElementByClassName('data').innerHTML = responseResult ;
         let show = document.getElementById('data');
         show.innerHTML = responseResult.text();
       })
