@@ -26,6 +26,23 @@
         //let show = document.getElementById('data');
         //show.innerHTML = responseResult.text();
         })
+
+
+
+
+fetch('https://indeal.io/test/gen1.php').then(function (response) {
+	// The API call was successful!
+	return response.text();
+}).then(function (html) {
+
+	// Convert the HTML string into a document object
+	var parser = new DOMParser();
+	var doc = parser.parseFromString(html, 'text/html');
+
+
+
+
+
       </script>
      <!--
         <script>
