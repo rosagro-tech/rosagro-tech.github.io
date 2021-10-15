@@ -1,8 +1,13 @@
-       <div>         [0] 
+     
+
+
+        <div>         [0] 
         <div id="data" class="data"></div>
          <br>
         <div id="error"></div>
         </div>
+
+
 
         <div>        [1] 
         <div id="data2"></div>
@@ -12,20 +17,20 @@
 
 
        <script>
-
-
-
        var a = fetch("https://indeal.io/test/gen1.php")
        .then(promiseResult => {
        console.log(promiseResult)
        return promiseResult.text()
-     })
+      })
        .then(responseResult => {
         console.log(responseResult)
         document.write(responseResult)
-    })
+      })
+      </script>
 
 
+
+        <script>
            async function getUsers() {
            try {
              let response = await fetch('https://indeal.io/test/gen1.php'); 
@@ -35,13 +40,12 @@
              return vars;alert(vars);
              document.getElementById('data').innerHTML = vars + red;
              document.getElementByClassName('data').innerHTML = vars +  green ;
-        } catch(error) {
-    alert(error);
-     }
-   }
-getUsers();
-
-</script>
+               } catch(error) {
+           alert(error);
+             }
+           }
+        getUsers();
+        </script>
 
 
 <script>
