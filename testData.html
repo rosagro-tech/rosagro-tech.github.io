@@ -4,6 +4,13 @@
     <div id="error"></div>
     </div>
 
+    <div> [1] 
+    <div id="data2"></div>
+    <br>
+    <div id="error2"></div>
+    </div>
+
+
        <script>
        async function getUsers() {
            try {
@@ -26,11 +33,11 @@ getUsers();
          })
          .then((data) => {
           const bigdata = data.text();
-          document.getElementById('data').innerHTML = bigdata + 'data 1';
+          document.getElementById('data2').innerHTML = bigdata + 'data 1';
           console.log(data);
          })
          .catch((error) => {
-          document.getElementById('error').innerHTML = data + 'data 1 err';
+          document.getElementById('error2').innerHTML = data + 'data 1 err';
           console.log(error)
          })
        </script>
