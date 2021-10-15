@@ -10,7 +10,7 @@
 
 body{}
 :root {
-    --atom-size: 80px;
+    --atom-size: 140px;
     --atom-color-hex: white;
     --atom-color-rgb: 255, 255, 255;
     --nucleus-size: calc(var(--atom-size) / 5);
