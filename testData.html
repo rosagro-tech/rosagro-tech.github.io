@@ -4,24 +4,21 @@
 
             [1] 
         <div id="data2"></div>
-       <div id="error2"></div>
+        <div id="error2"></div>
       
 
 
        <script>
-       var a = fetch("https://indeal.io/test/gen1.php")
+        var a = fetch("https://indeal.io/test/gen1.php")
        .then(promiseResult => {
        //console.log(promiseResult)
        return promiseResult.text()
-      })
+       })
        .then(responseResult => {
-
         alert(responseResult);alert(light);
-
         const show = document.getElementById('data');
-
-        show.innerHTML = responceResult;
-        show.innerHTML = 'red= ' + red;
+        show.innerHTML = responseResult[0];
+        show.innerHTML = responseResult ;
         alert(responseResult);
         //alert(promiseResult + ' промис');
         //document.write(responseResult)
