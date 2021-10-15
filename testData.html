@@ -30,11 +30,13 @@ getUsers();
        fetch('https://indeal.io/test/gen1.php')
           .then((response) => {
            response.text()
-           return response.json(); // Error!
+           // return response.json(); // Error!
+           return response ; 
+           document.getElementById('data2').innerHTML = response + ' data 0 ';
          })
          .then((data) => {
           const bigdata = data.text();
-          document.getElementById('data2').innerHTML = bigdata + 'data 1';
+          document.getElementById('data2').innerHTML = bigdata + ' data 1 ';
           console.log(data);
          })
          .catch((error) => {
