@@ -15,13 +15,13 @@
        return promiseResult.text()
       })
        .then(responseResult => {
+
+        alert(responseResult);alert(light);
+
         const show = document.getElementById('data');
 
         show.innerHTML = responceResult;
-
-        show.innerHTML = 'red= ' +red;
-
-
+        show.innerHTML = 'red= ' + red;
         alert(responseResult);
         //alert(promiseResult + ' промис');
         //document.write(responseResult)
