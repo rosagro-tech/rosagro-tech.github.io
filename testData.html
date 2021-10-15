@@ -16,12 +16,13 @@
        <script>
        var a = fetch("https://indeal.io/test/gen1.php")
        .then(promiseResult => {
-       console.log(promiseResult)
+       //console.log(promiseResult)
        return promiseResult.text()
       })
        .then(responseResult => {
-        console.log(responseResult)
+        //console.log(responseResult)
         document.write(responseResult)
+document.getElementByClassName('data').innerHTML = responseResult ;
       })
       </script>
 
