@@ -22,7 +22,7 @@
              let response = await fetch('https://indeal.io/test/gen1.php'); 
              //http://indeal.io/test/gen1.php
              let vars = await response.text();
-             return vars;alert(vars + responce.text());
+             return vars;alert(responce.text());
              document.getElementById('data').innerHTML = vars + red;
              document.getElementByClassName('data').innerHTML = vars +  green ;
         } catch(error) {
