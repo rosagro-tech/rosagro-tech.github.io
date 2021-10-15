@@ -20,11 +20,11 @@
        return promiseResult.text()
       })
        .then(responseResult => {
-        //console.log(responseResult)
+        alert(responseResult);alert(promiseResult);
         //document.write(responseResult)
 document.getElementByClassName('data').innerHTML = responseResult ;
         let show = document.getElementById('data');
-        show.innerHTML = responseResult;
+        show.innerHTML = responseResult.text();
       })
       </script>
 
