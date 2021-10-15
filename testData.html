@@ -18,7 +18,7 @@
              //http://indeal.io/test/gen1.php
              let vars = await response.text();
              return vars;
-             document.getElementsByClassName('data').innerHTML = vars;
+             document.getElementsByClassName('data').innerHTML = vars + ' варс ';
   } catch(error) {
     alert(error);
   }
@@ -36,7 +36,7 @@ getUsers();
          })
          .then((data) => {
           const bigdata = data.text();
-          document.getElementById('data2').innerHTML = bigdata + ' data 1 ';
+          document.getElementById('data3').innerHTML = bigdata + ' data 1 ';
           console.log(data);
          })
          .catch((error) => {
@@ -63,6 +63,13 @@ getUsers();
    <br>
    <div id="error1"></div>
 </div>
+
+<div>          [3]
+   <div id="data3"></div>
+   <br>
+   <div id="error3"></div>
+</div>
+
 
 
 
