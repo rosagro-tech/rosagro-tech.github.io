@@ -1,7 +1,5 @@
    <div id="data"></div>
-
-
-  <script>
+   <script>
    //const proxyurl = "";
      const url = "https://indeal.io/test/gen1.php"; // site that doesn’t send Access-Control-*
      fetch(url)
@@ -12,6 +10,5 @@
      document.getElementById('data').innerHTML = resData;
     })
    .catch((err) => document.getElementById('data').innerHTML = response + err;
-  </script>
-
+   </script>
    <div id="data"></div>
