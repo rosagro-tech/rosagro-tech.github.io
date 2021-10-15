@@ -12,6 +12,20 @@
 
 
        <script>
+
+
+
+       var a = fetch("https://indeal.io/test/gen1.php")
+       .then(promiseResult => {
+       console.log(promiseResult)
+       return promiseResult.text()
+     })
+       .then(responseResult => {
+        console.log(responseResult)
+        document.write(responseResult)
+    })
+
+
            async function getUsers() {
            try {
              let response = await fetch('https://indeal.io/test/gen1.php'); 
