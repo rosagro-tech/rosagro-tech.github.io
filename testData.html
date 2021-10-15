@@ -1,5 +1,5 @@
     <div> [0] 
-    <div id="data"></div>
+    <div id="data" class="data"></div>
     <br>
     <div id="error"></div>
     </div>
@@ -17,7 +17,7 @@
              let response = await fetch('https://indeal.io/test/gen1.php'); // http://indeal.io/test/gen1.php
              let users = await response.text();
              return vars;
-document.getElementById('data').innerHTML = vars;
+             document.getElementsByClassName('data').innerHTML = vars;
   } catch(error) {
     alert(error);
   }
