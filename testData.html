@@ -1,4 +1,4 @@
-   <div id="data"></div>
+  <span> data 1 </span> <div id="data"></div>
 
    <div id="error"></div>
 
@@ -10,11 +10,11 @@
          })
          .then((data) => {
           const bigdata = data.text();
-          document.getElementById('data').innerHTML = bigdata;
+          document.getElementById('data').innerHTML = bigdata + 'data 1';
           console.log(data);
          })
          .catch((error) => {
-       document.getElementById('error').innerHTML = data;
+       document.getElementById('error').innerHTML = data + 'data 1 err';
            console.log(error)
          })
        </script>
