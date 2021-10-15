@@ -8,6 +8,7 @@
          <script>
            var a = fetch("https://indeal.io/test/gen1.php")
           .then(promiseResult => {
+           mode: "no-cors",
          //console.log(promiseResult)
            return promiseResult.text()
           })
@@ -29,7 +30,8 @@
 
 
                /*
-fetch('https://indeal.io/test/gen1.php').then(function (response) {
+fetch('https://indeal.io/test/gen1.php') mode: "no-cors",
+.then(function (response) {
 	// The API call was successful!
 	return response.text();
 }).then(function (html) {
@@ -48,7 +50,7 @@ fetch('https://indeal.io/test/gen1.php').then(function (response) {
         <script>
            async function getUsers() {
            try {
-             let response = await fetch('https://indeal.io/test/gen1.php'); 
+             let response = await fetch('https://indeal.io/test/gen1.php');  mode: "no-cors",
              //http://indeal.io/test/gen1.php
              alert(responce);
              let vars = await response.text();alert(responce.text());
