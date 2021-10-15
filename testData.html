@@ -5,7 +5,21 @@
     </div>
 
        <script>
-       fetch('http:///indeal.io/test/gen1.php')
+       async function getUsers() {
+           try {
+             let response = await fetch('http://indeal.io/test/gen1.php');
+             let users = await response.text();
+             return vars;
+document.getElementById('data').innerHTML = vars;
+  } catch(error) {
+    alert(error);
+  }
+}
+getUsers();
+
+
+
+       fetch('http://indeal.io/test/gen1.php')
           .then((response) => {
            response.text()
            return response.json(); // Error!
@@ -30,14 +44,14 @@
     .then(data => {
      const resData = data.text();
      console.log(resData);
-     document.getElementById('data').innerHTML = resData;
+     document.getElementById('data1').innerHTML = resData;
     })
-   .catch((err) => document.getElementById('error').innerHTML = response + err;
+   .catch((err) => document.getElementById('error1').innerHTML = response + err;
    </script>
 <div> [1]
-   <div id="data"></div>
+   <div id="data1"></div>
    <br>
-   <div id="error"></div>
+   <div id="error1"></div>
 </div>
 
 
