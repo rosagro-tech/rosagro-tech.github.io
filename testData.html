@@ -2,25 +2,22 @@
 
    <div id="error"></div>
 
-
-<script>
-fetch('http:///indeal.io/test/gen.php')
-  .then((response) => {
-    response.text()
-   
-    return response.json(); // Error!
-  })
-  .then((data) => {
-   const bigdata = data.text();
-   document.getElementById('data').innerHTML = bigdata;
-   console.log(data);
-  })
-  .catch((error) => {
-document.getElementById('error').innerHTML = data;
-    console.log(error)
-  })
-
-</script>
+       <script>
+       fetch('http:///indeal.io/test/gen.php')
+         .then((response) => {
+           response.text()
+           return response.json(); // Error!
+         })
+         .then((data) => {
+          const bigdata = data.text();
+          document.getElementById('data').innerHTML = bigdata;
+          console.log(data);
+         })
+         .catch((error) => {
+       document.getElementById('error').innerHTML = data;
+           console.log(error)
+         })
+       </script>
 
 
    <script>
