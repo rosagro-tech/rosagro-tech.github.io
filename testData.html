@@ -24,7 +24,7 @@
              let vars = await response.text();
              return vars;
              document.getElementById('data').innerHTML = vars + red;
-             document.getElementByClassName('data').innerHTML = vars + ' варс ';
+             document.getElementByClassName('data').innerHTML = vars +  green ;
         } catch(error) {
     alert(error);
      }
@@ -39,11 +39,11 @@ M
            response.text()
           //return response.json(); // Error!
            return response1 ; 
-           document.getElementById('data2').innerHTML = response1 + ' data 0 ';
+           document.getElementById('data2').innerHTML = response1 + blue;
          })
          .then((response) => {
           const bigdata = responce.text();
-          document.getElementById('data3').innerHTML = bigdata + ' data 1 ';
+          document.getElementById('data3').innerHTML = bigdata +  white ;
           console.log(data);
          })
          .catch((error) => {
