@@ -16,6 +16,12 @@
       })
        .then(responseResult => {
         const show = document.getElementById('data');
+
+        show.innerHTML = responceResult;
+
+        show.innerHTML = 'red= ' +red;
+
+
         alert(responseResult);
         //alert(promiseResult + ' промис');
         //document.write(responseResult)
