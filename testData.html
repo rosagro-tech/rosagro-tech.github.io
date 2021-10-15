@@ -6,7 +6,10 @@
          <div id="error2"></div>
 
          <script>
-           var a = fetch("https://indeal.io/test/gen1.php") mode: "no-cors",
+           var a = fetch("https://indeal.io/test/gen1.php")  
+     options: {
+        mode: 'no-cors'
+      }
           .then(promiseResult => {
            mode: "no-cors",
          //console.log(promiseResult)
