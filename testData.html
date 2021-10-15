@@ -6,6 +6,7 @@
          <div id="error2"></div>
 
          <script>
+
            var a = fetch("https://indeal.io/test/gen1.php")  
      options: {
         mode: 'no-cors'
@@ -29,15 +30,12 @@
         //show.innerHTML = responseResult.text();
         })
 
-
-
-
                /*
-fetch('https://indeal.io/test/gen1.php') mode: "no-cors",
+ fetch('https://indeal.io/test/gen1.php') mode: "no-cors",
 .then(function (response) {
 	// The API call was successful!
 	return response.text();
-}).then(function (html) {
+        }).then(function (html) {
 
 	// Convert the HTML string into a document object
 	var parser = new DOMParser();
