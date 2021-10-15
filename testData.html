@@ -20,7 +20,8 @@
        return promiseResult.text()
       })
        .then(responseResult => {
-        alert(responseResult);alert(promiseResult);
+        alert(responseResult + ' респонс');
+        alert(promiseResult + ' промис');
         //document.write(responseResult)
 document.getElementByClassName('data').innerHTML = responseResult ;
         let show = document.getElementById('data');
