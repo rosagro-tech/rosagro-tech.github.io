@@ -1,7 +1,31 @@
    <div id="data"></div>
+
+   <div id="error"></div>
+
+
+<script>
+fetch('http:///indeal.io/test/gen.php')
+  .then((response) => {
+    response.text()
+   
+    return response.json(); // Error!
+  })
+  .then((data) => {
+   const bigdata = data.text();
+   document.getElementById('data').innerHTML = bigdata;
+   console.log(data);
+  })
+  .catch((error) => {
+document.getElementById('error').innerHTML = data;
+    console.log(error)
+  })
+
+</script>
+
+
    <script>
    //const proxyurl = "";
-     const url = "https://indeal.io/test/gen.php"; // site that doesn’t send Access-Control-*
+     const url = "http://indeal.io/test/gen.php"; // site that doesn’t send Access-Control-*
      fetch(url)
     .then(response => response)
     .then(data => {
@@ -9,6 +33,11 @@
      console.log(resData);
      document.getElementById('data').innerHTML = resData;
     })
-   .catch((err) => document.getElementById('data').innerHTML = response + err;
+   .catch((err) => document.getElementById('error').innerHTML = response + err;
    </script>
+
    <div id="data"></div>
+   <div id="error"></div>
+
+
+
