@@ -1,0 +1,16 @@
+
+  <script>
+   //const proxyurl = "";
+     const url = "https://indeal.io/test/gen1.php"; // site that doesn’t send Access-Control-*
+     fetch(url)
+    .then(response => response)
+    .then(data => {
+     const resData = data.text();
+     console.log(resData);
+     document.getElementById('data').innerHTML = resData;
+    })
+   .catch((err) => console.log("Can’t access " + url + " response. Blocked by browser?" + err));
+  </script>
+
+
+ <div id="data"></div>
