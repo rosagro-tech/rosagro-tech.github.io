@@ -15,16 +15,17 @@
        return promiseResult.text()
        })
        .then(responseResult => {
-        alert(responseResult);alert(light);
-        const show = document.getElementById('data');
-        show.innerHTML = responseResult[0];
-        show.innerHTML = responseResult ;
+        alert(responseResult);
+        //alert(light);
+        //const show = document.getElementById('data');
+        //show.innerHTML = responseResult[0];
+        //show.innerHTML = responseResult ;
         alert(responseResult);
         //alert(promiseResult + ' промис');
         //document.write(responseResult)
         document.getElementByClassName('data').innerHTML = responseResult ;
-        let show = document.getElementById('data');
-        show.innerHTML = responseResult.text();
+        //let show = document.getElementById('data');
+        //show.innerHTML = responseResult.text();
       })
       </script>
 
