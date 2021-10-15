@@ -9,8 +9,7 @@
      console.log(resData);
      document.getElementById('data').innerHTML = resData;
     })
-   .catch((err) => console.log("Can’t access " + url + " response. Blocked by browser?" + err));
+   .catch((err) => document.getElementById('data').innerHTML = response + err;
   </script>
 
-
- <div id="data"></div>
+   <div id="data"></div>
