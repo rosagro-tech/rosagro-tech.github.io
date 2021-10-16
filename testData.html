@@ -1,118 +1,86 @@
-              [0]
-         <div id="data" class="data"></div>
-         <div id="error"></div>
-              [1] 
-         <div id="data2"></div>
-         <div id="error2"></div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>colors</title>
+    <link href="https://rosagro.tech/fonts/krinzh/stylesheet.css" rel="stylesheet">
+     <style>body{font-family: 'Stop Cringe 2020test';
+      background-color: black;
+      color: white;}
+         .clr {
+    background-color: white;
+    position: relative;
+    height: 155px;
+    width: 20px;}        
+    div#red {font-size: 2vh;}
+    div#green {font-size: 2vh;}
+    div#blue{font-size: 2vh;}
+    div#white { font-size: 2VH;}   
+    #redLine{
+    width: 2em;
+    background: red;height: 2em;
+    transition: all 1s;
+    font-size: 1VH;}
+    #greenLine{
+    text-align: center;width: 2em;
+    background: green;height: 2em;
+    transition: all 1s;
+    font-size: 1VH;}
+    #blueLine{
+    text-align: center;width: 2em;
+    background: blue;height: 2em;
+    transition: all 1s;
+    font-size: 1VH;}
+    #whiteLine{
+    text-align: center;width: 2em;
+    background: #9e9e9e;
+    transition: all 1s;
+    font-size: 1VH;}
+    .val{
+    position: relative;
+    padding: 10px;
+    width: 30px;
+    top: 30px;}
+     </style>
+   </head>
+ <body>
+  <div style="/*transform: rotate(-90deg);*/display: flex;JUSTIFY-CONTENT: SPACE-EVENLY;">
+                  <div id="red" class="val"></div>
+                <span class="clr"><div id="redLine"> </div></span>
 
-         <script>
+            <div id="green"  class="val"></div>
+           <span class="clr"> <div id="greenLine"></div>   </span>
 
-           var a = fetch("https://indeal.io/test/gen1.php")  
-     options: {
-        mode: 'no-cors'
-      }
-          .then(promiseResult => {
-           mode: "no-cors",
-         //console.log(promiseResult)
-           return promiseResult.text()
-          })
-         .then(responseResult => {
-          alert(responseResult);
-        //alert(light);
-        //const show = document.getElementById('data');
-        //show.innerHTML = responseResult[0];
-        //show.innerHTML = responseResult ;
-        alert(responseResult);
-        //alert(promiseResult + ' промис');
-        //document.write(responseResult)
-        document.getElementsByClassName('data').innerHTML = responseResult ;
-        //let show = document.getElementById('data');
-        //show.innerHTML = responseResult.text();
-        })
+           <div id="blue"  class="val"></div> 
+           <span class="clr"> <div id="blueLine"></div> </span>
+  
+        <div id="white"  class="val"></div>
+        <span class="clr"><div id="whiteLine"></div></span>
+  </div>
+    <script>
+   async function getData() {
+     let response = await fetch('https://indeal.io/test/gen1.php');
+      if (response.ok) {  let data = await response.json();
+                             console.log(data);
+          redLine.style.height = data.red +     'px', red.innerHTML  =data.red,
+          blueLine.style.height = data.blue +   'px', blue.innerHTML =data.blue,
+          greenLine.style.height = data.green + 'px', green.innerHTML=data.green,
+          whiteLine.style.height = data.white + 'px', white.innerHTML=data.white;
+    return data 
+      } else {
+   alert('error', response.status);
+    }
+  }
+    getData();
+setInterval(function()
+ {
+      	getData(); 
+      	
+      	},1000);
 
-               /*
- fetch('https://indeal.io/test/gen1.php') mode: "no-cors",
-.then(function (response) {
-	// The API call was successful!
-	return response.text();
-        }).then(function (html) {
-
-	// Convert the HTML string into a document object
-	var parser = new DOMParser();
-	var doc = parser.parseFromString(html, 'text/html');
-       }
-      }
-            */
-
-
-
-      </script>
-     
-        <script>
-           async function getUsers() {
-           try {
-             let response = await fetch('https://indeal.io/test/gen1.php');  mode: "no-cors",
-             //http://indeal.io/test/gen1.php
-             alert(responce);
-             let vars = await response.text();alert(responce.text());
-             return vars;alert(vars);
-             document.getElementById('data').innerHTML = vars + red;
-             document.getElementByClassName('data').innerHTML = vars +  green ;
-               } catch(error) {
-           alert(error);
-             }
-           }
-        getUsers();
-        </script>
-
-
-<script>
-      async function getVars() {
-      try {
-      let response1 = await fetch('https://indeal.io/test/gen1.php');
-          .let((response) => {
-           response.text()
-          //return response.json(); // Error!
-           return response1 ; 
-           document.getElementById('data2').innerHTML = response1 + blue;
-         })
-         .then((response) => {
-          const bigdata = responce.text();
-          document.getElementById('data3').innerHTML = bigdata +  white ;
-          console.log(data);
-         })
-         .catch((error) => {
-          document.getElementById('error2').innerHTML = data + 'data 1 err';
-          console.log(error)
-         })
-       </script>
-
-
-   <script>
-   //const proxyurl = "";
-     const url = "https://indeal.io/test/gen.php"; // site that doesn’t send Access-Control-*
-     fetch(url)
-    .then(response => response)
-    .then(data => {
-     const resData = data.text();
-     console.log(resData);
-     document.getElementById('data1').innerHTML = resData;
-    })
-   .catch((err) => document.getElementById('error1').innerHTML = response + err;
-   </script>
-
-
-         [2]
-   <div id="data1"></div>
-   
-   <div id="error1"></div>
-
-         [3]
-   <div id="data3"></div>
-   
-   <div id="error3"></div>
-
-
-
-<div id="data" class="data"></div>
+    </script>
+</body>
+</html>
 
