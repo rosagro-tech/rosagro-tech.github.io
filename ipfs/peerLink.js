@@ -11396,7 +11396,7 @@ P2PGraph.prototype._update = function () {
       return self._scale() * (d.me ? 15 : 10)
     })
     .style('fill', COLORS.nodes.method)
-     var peeer = 'peer'
+     var peeer = peerInfos['0']['id']
   g.append('a')
     .attr('href', peeer)
     .text(function (d) {
