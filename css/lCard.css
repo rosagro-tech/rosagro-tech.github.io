@@ -20,10 +20,12 @@ body{background-color: black; }
 }
 
 .title {
-  margin-top: 230px;
-  text-align: center;
-  color:#ff9800;
-  font-weight: 900;
+    margin-top: 232px;
+    text-align: center;
+    color: #ff9800;
+    font-weight: 900;
+    font-size: 3em;
+    letter-spacing: 12px;
 }
 
 .desk {
