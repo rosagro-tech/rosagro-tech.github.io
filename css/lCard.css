@@ -349,7 +349,7 @@ body{background-color: black; }
     border-radius: 50%;
     border: 1px solid #ff9800;
     opacity: 0;
-    animation: expolode 0.4s infinite;
+    animation: expolode 1s infinite;
     background-color: #ffaa3e;
 }
 
@@ -361,7 +361,7 @@ position: absolute;
     height: 8px;
     border-radius: 50%;
     opacity: 0;
-    animation: expolode 0.8s infinite;
+    animation: expolode 1.7s infinite;
     border: 1px solid #ff9800;
     background-color: #ffaa3e;
 }
@@ -375,7 +375,7 @@ position: absolute;
     height: 6px;
     border-radius: 50%;
     opacity: 0;
-    animation: expolode .7s infinite;
+    animation: expolode 2s infinite;
     border: 1px solid #ff9800;
     background-color: #ffaa3e;
 }
