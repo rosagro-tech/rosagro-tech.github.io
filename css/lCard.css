@@ -341,39 +341,41 @@ body{background-color: black; }
 }
 
 .bubble1 {
-  position: absolute;
-  left: 93px;
-  top: 86px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: 1px solid #ffab77;
-  opacity: 0;
-  animation: expolode 0.4s infinite;
+    position: absolute;
+    left: 93px;
+    top: 86px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid #ff9800;
+    opacity: 0;
+    animation: expolode 0.4s infinite;
+    background-color: #ffaa3e;
 }
 
 .bubble2 {
-  position: absolute;
-  left: 108px;
-  top: 78px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: 1px solid #ffab77;
-  opacity: 0;
-  animation: expolode 0.8s infinite;
+position: absolute;
+    left: 108px;
+    top: 78px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: expolode 0.8s infinite;
+    border: 1px solid #ff9800;
+    background-color: #ffaa3e;
 }
 
-.bubble3 {
-  position: absolute;
-  left: 98px;
-  top: 70px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  border: 1px solid #ffab77;
-  opacity: 0;
-  animation: expolode .7s infinite;
+    position: absolute;
+    left: 98px;
+    top: 70px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: expolode .7s infinite;
+    border: 1px solid #ff9800;
+    background-color: #ffaa3e;
 }
 
 .drip {
