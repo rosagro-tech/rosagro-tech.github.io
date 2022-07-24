@@ -166,27 +166,27 @@ body{background-color: black; }
 }
 
 .cupGap > span:nth-child(2) {
-  bottom: 10px;
+  bottom: 10px;    background: transparent;
 }
 
 .cupGap > span:nth-child(3) {
-  bottom: 20px;
+  bottom: 20px;    background: transparent;
 }
 
 .cupGap > span:nth-child(4) {
-  bottom: 30px;
+  bottom: 35px;
 }
 
 .cupGap > span:nth-child(5) {
-  bottom: 40px;
+  bottom: 45px;
 }
 
 .cupGap > span:nth-child(6) {
-  bottom: 50px;
+  bottom: 55px;
 }
 
 .cupGap > span:nth-child(7) {
-  bottom: 60px;
+  bottom: 65px;
 }
 
 .filter {
